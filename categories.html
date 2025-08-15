@@ -5,22 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gestión de Categorías</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <!-- Navbar con menú -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">Inventario</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav">
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -37,6 +40,7 @@
         </div>
     </nav>
 
+    <!-- Contenido principal -->
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="h4">Lista de Categorías</h2>
@@ -57,7 +61,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td colspan="5">Actualmente no hay registros</td>
+                    <tr>
+                        <td colspan="5" class="text-center">Actualmente no hay registros</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -76,22 +82,16 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="categoryName" class="form-label">Nombre <span style="color:red">*</span></label>
-                            <input type="text" class="form-control" id="categoryName"
-                                placeholder="Nombre de la categoría" required />
+                            <input type="text" class="form-control" id="categoryName" placeholder="Nombre de la categoría" required />
                         </div>
                         <div class="mb-3">
-                            <label for="categoryDescription" class="form-label">Descripción <span
-                                    style="color:red">*</span></label>
+                            <label for="categoryDescription" class="form-label">Descripción <span style="color:red">*</span></label>
                             <textarea id="categoryDescription" class="form-control" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer border-0">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancelar
-                        </button>
-                        <button type="submit" class="btn btn-success" id="saveCategory">
-                            Guardar
-                        </button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success" id="saveCategory">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -100,10 +100,10 @@
 
     <!-- JS Bootstrap bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
-    <!-- Main JS -->
-    
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!-- Controlador principal de categorías -->
+    <script type="module" src="Js/controllers/categoryController.js"></script>
 </body>
 
 </html>
